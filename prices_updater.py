@@ -1,5 +1,6 @@
 import sqlalchemy as sa
 import pandas as pd
+import os
 
 from prices_fetcher import get_price_for_code
 
@@ -13,7 +14,6 @@ CURRENT_VALUE_COLUMN = "current unit value"
 
 def get_codes():
     return pd.read_sql(TABLE, ENGINE.connect())[CODE_COLUMN].tolist()
-
 
 def update_db():
     codes = get_codes()
