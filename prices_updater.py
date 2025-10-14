@@ -22,6 +22,7 @@ def update_db():
     for code in codes:
         price = get_price_for_code(code)
         price = str(price)
+        print(f"Price for {code}: {price}.")
 
         update_query += f"""
             update {TABLE}
@@ -36,6 +37,7 @@ def update_db():
 if __name__ == "__main__":
     try:
         update_db()
+        print("All successfull")
     except Exception as e:
         print(f"There was a problem: {str(e)}")
  
