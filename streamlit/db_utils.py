@@ -39,7 +39,7 @@ PURPOSES_TABLE: str = "purposes"
 INVESTMENTS_TABLE: str = "investments"
 PRODUCTS_TABLE: str = "products"
 
-DEFAULT_CONNECTION_URL_ENV = "DATABASE_URL"
+DB_URL = "DB_URL"
 
 
 def get_engine(connection_url: Optional[str] = None) -> Engine:
@@ -66,8 +66,8 @@ def get_engine(connection_url: Optional[str] = None) -> Engine:
         set.
     """
 
-    url = connection_url or os.environ.get(DEFAULT_CONNECTION_URL_ENV)
-    url = r'postgresql://neondb_owner:npg_QxLWPijMkC46@ep-rapid-forest-agjxejfn-pooler.c-2.eu-central-1.aws.neon.tech/investments?sslmode=require&channel_binding=require'
+    url = connection_url or os.getenv(DB_URL)
+    
     if not url:
         raise RuntimeError(
             f"A database connection URL must be provided either via the ``connection_url`` "
