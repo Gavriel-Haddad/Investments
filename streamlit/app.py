@@ -128,6 +128,7 @@ def record_transaction_page() -> None:
                     date=date_str,
                     product=product,
                     units=units,
+                    buying_value=buying_value,
                     purpose=purpose,
                 )
                 if is_valid_transaction:
@@ -135,7 +136,7 @@ def record_transaction_page() -> None:
                         date=date_str,
                         product=product,
                         units=int(units),
-                        buying_value=int(buying_value),
+                        buying_value=buying_value,
                         purpose=purpose,
                     )
                     st.success("Transaction recorded successfully!")
