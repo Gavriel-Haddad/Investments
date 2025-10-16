@@ -25,6 +25,7 @@ Example usage::
 from __future__ import annotations
 
 import datetime
+import time
 import os
 
 import pandas as pd
@@ -45,6 +46,7 @@ def main() -> None:
             return
     if "products" not in st.session_state:
         st.session_state["products"] = db_utils.get_products()
+        st.balloons()
     if "purposes" not in st.session_state:
         st.session_state["purposes"] = db_utils.get_purposes()
 
@@ -134,10 +136,12 @@ def record_transaction_page() -> None:
                         date=date_str,
                         product=product,
                         units=int(units),
-                        buying_value=int(buying_value),
+                        buying_value=buying_value,
                         purpose=purpose,
                     )
                     st.success("Transaction recorded successfully!")
+                    time.sleep(2)
+                    st.rerun()
             except Exception as exc:
                 st.error(f"Error recording transaction: {exc}")        
 
@@ -175,6 +179,8 @@ def add_product_page() -> None:
                     )
                     st.session_state.pop("products")
                     st.success(f"Product '{product_name}' added successfully!")
+                    time.sleep(2)
+                    st.rerun()
             except Exception as exc:
                 st.error(f"Error adding product: {exc}")
 
@@ -208,6 +214,8 @@ def add_purpose_page() -> None:
 
                     st.session_state.pop("purposes")
                     st.success(f"Purpose '{purpose_name}' added successfully!")
+                    time.sleep(2)
+                    st.rerun()
             except Exception as exc:
                 st.error(f"Error adding purpose: {exc}")
 

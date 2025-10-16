@@ -5,7 +5,7 @@ import os
 from prices_fetcher import get_price_for_code
 
 
-DB_URL = os.getenv("DB_URL")
+DB_URL = r'postgresql://neondb_owner:npg_QxLWPijMkC46@ep-rapid-forest-agjxejfn-pooler.c-2.eu-central-1.aws.neon.tech/investments?sslmode=require&channel_binding=require' #os.getenv("DB_URL")
 ENGINE = sa.create_engine(DB_URL)
 
 TABLE = "products"

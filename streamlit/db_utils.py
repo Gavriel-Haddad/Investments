@@ -67,7 +67,7 @@ def get_engine(connection_url: Optional[str] = None) -> Engine:
     """
 
     url = connection_url or os.getenv(DB_URL)
-    
+    url = r'postgresql://neondb_owner:npg_QxLWPijMkC46@ep-rapid-forest-agjxejfn-pooler.c-2.eu-central-1.aws.neon.tech/investments?sslmode=require&channel_binding=require'
     if not url:
         raise RuntimeError(
             f"A database connection URL must be provided either via the ``connection_url`` "
@@ -80,22 +80,22 @@ def validate_investment(
     date: str,
     product: str,
     units: int,
-    buying_value: int,
+    buying_value: float,
     purpose: str,
 ) -> None | bool:
     if not date:
         raise ValueError("Missing date")
     if not product:
         raise ValueError("Missing product")
-    if not units:
+    if units <= 0:
         raise ValueError("Missing units")
-    if not buying_value:
-        raise ValueError("Missing buying_value")
+    if buying_value <= 0:
+        raise ValueError("Missing buying value")
     if not purpose:
         raise ValueError("Missing purpose")
-    if product not in st.session_state["products"]:
+    if product not in [product_name for product_name, value in st.session_state["products"]]:
         raise ValueError("Product does not exist")
-    if purpose not in st.session_state["purposes"]:
+    if purpose not in [purpose_name for purpose_name, value in st.session_state["purposes"]]:
         raise ValueError("Purpose does not exist")
     
     return True
@@ -104,7 +104,7 @@ def insert_investment(
     date: str,
     product: str,
     units: int,
-    buying_value: int,
+    buying_value: float,
     purpose: str,
 ) -> None:
     """Insert a new transaction into the ``investments`` table.
