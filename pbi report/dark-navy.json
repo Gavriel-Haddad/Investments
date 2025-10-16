@@ -1,0 +1,134 @@
+{
+  "name": "Dark Navy Pro - Base",
+  "dataColors": [ "#2F6BFF", "#38D39F", "#F5C451", "#9C7CFF", "#F04D5E", "#5EC8FF" ],
+  "background": "#0B1220",
+  "foreground": "#E8EDF6",
+  "tableAccent": "#2F6BFF",
+  "visualStyles": {
+    "*": {
+      "*": {
+        "title": [
+          {
+            "show": true,
+            "fontColor": { "solid": { "color": "#E8EDF6" } },
+            "alignment": "center",
+            "fontSize": 13
+          }
+        ],
+        "background": [
+          {
+            "color": { "solid": { "color": "#0F1B33" } },
+            "transparency": 0
+          }
+        ],
+        "border": [ { "show": false } ],
+        "categoryLabels": [ { "color": { "solid": { "color": "#B7C3DA" } } } ],
+        "labels": [
+          {
+            "color": { "solid": { "color": "#E8EDF6" } },
+            "fontSize": 11
+          }
+        ],
+        "legend": [
+          {
+            "titleColor": { "solid": { "color": "#B7C3DA" } },
+            "labelColor": { "solid": { "color": "#E8EDF6" } },
+            "position": "Top",
+            "show": true,
+            "fontSize": 10
+          }
+        ]
+      }
+    },
+    "page": {
+      "*": {
+        "background": [
+          {
+            "color": { "solid": { "color": "#0B1220" } },
+            "transparency": 0
+          }
+        ]
+      }
+    },
+    "card": {
+      "*": {
+        "labels": [
+          {
+            "color": { "solid": { "color": "#E8EDF6" } },
+            "fontSize": 30
+          }
+        ],
+        "categoryLabels": [
+          {
+            "color": { "solid": { "color": "#B7C3DA" } },
+            "fontSize": 12
+          }
+        ]
+      }
+    },
+    "lineChart": {
+      "*": {
+        "categoryAxis": [
+          {
+            "labelColor": { "solid": { "color": "#E8EDF6" } },
+            "titleColor": { "solid": { "color": "#B7C3DA" } }
+          }
+        ],
+        "valueAxis": [
+          {
+            "labelColor": { "solid": { "color": "#E8EDF6" } },
+            "titleColor": { "solid": { "color": "#B7C3DA" } }
+          }
+        ],
+        "grid": [ { "color": { "solid": { "color": "#23314F" } } } ]
+      }
+    },
+    "areaChart": {
+      "*": {
+        "categoryAxis": [
+          {
+            "labelColor": { "solid": { "color": "#E8EDF6" } },
+            "titleColor": { "solid": { "color": "#B7C3DA" } }
+          }
+        ],
+        "valueAxis": [
+          {
+            "labelColor": { "solid": { "color": "#E8EDF6" } },
+            "titleColor": { "solid": { "color": "#B7C3DA" } }
+          }
+        ],
+        "grid": [ { "color": { "solid": { "color": "#23314F" } } } ]
+      }
+    },
+    "donutChart": {
+      "*": {
+        "labels": [
+          {
+            "color": { "solid": { "color": "#E8EDF6" } },
+            "fontSize": 11
+          }
+        ],
+        "legend": [
+          {
+            "titleColor": { "solid": { "color": "#B7C3DA" } },
+            "labelColor": { "solid": { "color": "#E8EDF6" } }
+          }
+        ]
+      }
+    },
+    "gauge": {
+      "*": {
+        "labels": [ { "color": { "solid": { "color": "#E8EDF6" } } } ],
+        "calloutValue": [
+          {
+            "color": { "solid": { "color": "#E8EDF6" } },
+            "fontSize": 24
+          }
+        ]
+      }
+    }
+
+
+
+  }
+}
