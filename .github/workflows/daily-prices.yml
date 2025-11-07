@@ -37,4 +37,4 @@ jobs:
           # secrets will be added in step 4
           DB_URL: ${{ secrets.DB_URL }}
         run: |
-          python prices_updater.py
+          python price_updating/prices_updater.py
