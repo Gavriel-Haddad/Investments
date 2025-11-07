@@ -3,8 +3,9 @@ name: Daily TASE Price Updater
 on:
   schedule:
     # GitHub Actions schedules run in **UTC** using POSIX cron
-    # 04:00 UTC ≈ 07:00 Israel time during DST, ≈ 06:00 in winter.
-    - cron: "0 4 * * *"
+    - cron: "0 4 * * *" # 04:00 UTC ≈ 07:00 Israel time during DST, ≈ 06:00 in winter.
+    - cron: "0 19 * * *" # 04:00 UTC ≈ 07:00 Israel time during DST, ≈ 06:00 in winter.
+    
   workflow_dispatch: {}  # allows manual runs from the Actions tab
 
 permissions:
