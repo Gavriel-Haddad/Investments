@@ -1,1 +1,1 @@
-pbi\ report/
+pbi*report/
